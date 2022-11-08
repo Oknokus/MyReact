@@ -1,4 +1,10 @@
 .title {
     color: red;
-    padding: 15px;
+    margin: 30px;   
+  }
+
+  .descriptionTitle {
+    color: rgb(87, 76, 76);
+    padding: 25px;
+    text-shadow: 11px 23px 32px black;
   }

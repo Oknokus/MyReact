@@ -1,9 +1,9 @@
 import React from "react";
 
-const ReactFunctionalComponent = (children, className) => {
-    <div className={className}>
+const ReactFunctionalComponent =  ({className, children}) => (
+    <div className={className}> 
         {children}
     </div>
-}
+)
 
 export default ReactFunctionalComponent;

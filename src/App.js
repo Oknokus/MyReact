@@ -2,40 +2,104 @@ import './App.css';
 import React, {Component} from 'react';
 import ReactComponent from './Components/Component';
 import ReactFunctionalComponent from './Components/Component';
-import ReactPureComponent from './Components/Component';
+import PureComponent from './Components/Component';
 
 
 export default class App extends Component {
-  render() {
-    const title = "Hello My World"
-    const className = "title"
+  render () {
+    const title  = "HE HE HE";
+    const className = 'title';
+    const descriptionTitle  = "description elem"
+    const classNameDescription = "descriptionTitle";
+
+
     const children = (
-      <span>
-        {title}
+      <span className={className}>
+        {title}        
       </span>
-    )    
-   
+    )
+    const description = (
+      <span className={classNameDescription}>
+        {descriptionTitle}        
+      </span>
+    )
+    return (
+      <div className='App'>
+        <ReactComponent>
+            {children}
+          </ReactComponent>
 
-  return (
-    <div className="App">
-    <ReactComponent className={className}>
-      {children}
-    </ReactComponent>
+          <ReactFunctionalComponent>
+            {description}
+          </ReactFunctionalComponent>
 
-    <ReactFunctionalComponent className={className}>
-      {children}
-    </ReactFunctionalComponent>
+          <PureComponent>
+            {children}
+          </PureComponent>
 
-    <ReactPureComponent className={className}>
-      {children}
-    </ReactPureComponent>
-    {
-      
-    React.createElement('div', {className: className}, React.createElement('span', {}, title)) }
-    </div>    
-  )
-};
+          {
+            React.createElement('div', {className: className}, React.createElement('span',{} , description))
+          }
+        </div>
+
+    )
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
