@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
+
 import './Seach_css.css';
 
-export default class Search extends Component {
 
+export default class Search extends Component {
     render() {
-        const {resetActiveFilm} = this.props;
+        const {seachActiveFilm} = this.props;
         return (
             <div className={"search"}>
                 <span className={"search__title"}>FIND YOUR MOVIE</span>
@@ -16,7 +17,7 @@ export default class Search extends Component {
                         <div className={"search__options_button"}>GENRE</div>
                     </div>
                     <div
-                        onClick={resetActiveFilm}
+                        onClick={seachActiveFilm}
                         className={"search-button"}>
                         SEARCH
                     </div>

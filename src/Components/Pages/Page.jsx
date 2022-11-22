@@ -9,6 +9,7 @@ import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
 
 import './Page_css.css';
 
+
 export default class Page extends Component {
     state = {
         activeFilm: null
@@ -26,15 +27,13 @@ export default class Page extends Component {
         const {activeFilm} = this.state;
 
         return (
-            <div className={"page"}>
-                <ErrorBoundary>
-                    <Header isFilmSelected={!!activeFilm} resetActiveFilm={this.resetActiveFilm}/>
-                    {activeFilm ? <FilmDescription activeFilm={activeFilm}/> :
+            <div className={"page"}>                       
+                    <Header isFilmSelected={activeFilm} resetActiveFilm={this.resetActiveFilm}/>
+                    {activeFilm ? <FilmDescription activeFilm={activeFilm}/> : 
                         <Search/>}
-                    <Description/>
-                    <FilmList setActiveFilm={this.setActiveFilm}/>
-                    <Footer/>
-                </ErrorBoundary>
+                        <Description/>                      
+                        {/* <FilmList setActiveFilm={this.setActiveFilm}/>  */}
+                        <Footer/>                 
             </div>
         );
     }

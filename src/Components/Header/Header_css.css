@@ -5,7 +5,7 @@
     display: flex;
     padding: 0 15px;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between;    
 }
 
 .header-title {
@@ -28,3 +28,4 @@
     color: #E91E63;
     cursor: pointer;
 }
+

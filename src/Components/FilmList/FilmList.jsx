@@ -17,13 +17,13 @@ export default class FilmList extends Component {
             const film = {name, date, genre, timeline, description: MOCK_FILM.description};
 
             content.push(
-                <FilmListItem title={name} date={date}
+                <FilmListItem title={name} 
+                              date={date}
                               genre={genre}
                               setActiveFilm={() => setActiveFilm(film)}/>
             );
         }
         return content;
-
     }
 
 

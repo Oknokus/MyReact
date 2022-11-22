@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
+
 import './FilmDescription_css.css';
 
-export default class FilmDescription extends Component {
 
+export default class FilmDescription extends Component {   
     render() {
         const {activeFilm: {name, description, date, timeline, genre }} = this.props;
         return (

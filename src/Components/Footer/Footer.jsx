@@ -1,13 +1,14 @@
-import React, {Component} from 'react';
-import './Footer_css.css';
+import {React, Component} from "react";
+
+import "./Footer_css.css";
+
 
 export default class Footer extends Component {
-
     render() {
-        return (
+        return(
             <div className={"footer"}>
-                <span className={"footer-title"}>netflixroulette</span>
+                <span className={"footer-title"}>NetflixrouLette</span>
             </div>
-        );
+        )
     }
 }
