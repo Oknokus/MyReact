@@ -1,7 +1,6 @@
 import {React, Component} from "react";
 
-import "./Header_css.css";
-
+import "../Header/Header_css.css"
 
 export default class Header extends Component {
     render() {
@@ -9,8 +8,8 @@ export default class Header extends Component {
         return(
             <div className={"header"}>
                 <span className={"header-title"}>NetflixrouLette</span>
-                { isFilmSelected &&
-                <div
+                {isFilmSelected &&
+                <div 
                 onClick={resetActiveFilm}
                 className={"search-button"}>
                     CLOSE
@@ -20,6 +19,20 @@ export default class Header extends Component {
         )
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

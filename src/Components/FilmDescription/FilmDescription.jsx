@@ -5,7 +5,7 @@ import './FilmDescription_css.css';
 
 export default class FilmDescription extends Component {   
     render() {
-        const {activeFilm: {name, description, date, timeline, genre }} = this.props;
+        const {kiryl1: {name, description, date, timeline, genre}} = this.props;
         return (
             <div className={"description__block"}>
                 <div className={"description__block_picture"}/>

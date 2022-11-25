@@ -5,7 +5,7 @@ import './Seach_css.css';
 
 export default class Search extends Component {
     render() {
-        const {seachActiveFilm} = this.props;
+        const {searchActiveFilm} = this.props;
         return (
             <div className={"search"}>
                 <span className={"search__title"}>FIND YOUR MOVIE</span>
@@ -17,7 +17,7 @@ export default class Search extends Component {
                         <div className={"search__options_button"}>GENRE</div>
                     </div>
                     <div
-                        onClick={seachActiveFilm}
+                        onClick={searchActiveFilm}
                         className={"search-button"}>
                         SEARCH
                     </div>

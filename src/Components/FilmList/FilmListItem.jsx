@@ -3,11 +3,11 @@ import React, {Component} from 'react';
 export default class FilmListItem extends Component {
 
     render() {
-        const {title, date, genre, setActiveFilm} = this.props;
+        const {title, date, genre, ulia} = this.props;
         return (
             <div
                 className={"film-list__item"}
-                onClick={setActiveFilm}
+                onClick={ulia}
             >
                 <div className={"film-list__item_picture"}/>
                 <div className={"film-list__item_info"}>

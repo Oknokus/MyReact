@@ -4,9 +4,11 @@ import {MOCK_FILM} from '../Objects/FILMS';
 import './FilmList_css.css';
 
 export default class FilmList extends Component {
-
-    renderFilms = () => {
-        const {setActiveFilm} = this.props;
+    handleClick = (film) => {
+        const {kiryl2} = this.props;
+        kiryl2(film)        
+    }  
+    renderFilms = () => {      
         let content = [];
 
         for (let i = 0; i < 24; i++) {
@@ -15,17 +17,17 @@ export default class FilmList extends Component {
             const genre = `${MOCK_FILM.genre} ${i}`;
             const timeline = MOCK_FILM.timeline + i;
             const film = {name, date, genre, timeline, description: MOCK_FILM.description};
+           
 
             content.push(
                 <FilmListItem title={name} 
                               date={date}
                               genre={genre}
-                              setActiveFilm={() => setActiveFilm(film)}/>
+                              ulia={() => this.handleClick(film)}/>
             );
         }
         return content;
     }
-
 
     render() {
         return (
