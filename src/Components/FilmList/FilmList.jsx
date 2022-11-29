@@ -1,39 +1,81 @@
-import React, {Component} from 'react';
-import FilmListItem from './FilmListItem';
-import {MOCK_FILM} from '../Objects/FILMS';
-import './FilmList_css.css';
+import {React, Component} from "react";
+import {MOCK_FILM} from "../Objects/FILMS"
+import FilmListItem from "./FilmListItem";
 
-export default class FilmList extends Component {
+import "./FilmList_css.css"
+
+export default class filmList extends Component {
     handleClick = (film) => {
-        const {kiryl2} = this.props;
-        kiryl2(film)        
-    }  
-    renderFilms = () => {      
+        const {getActiveFilm} = this.props;
+        getActiveFilm(film)
+    }
+
+    isRenderFilms = (film) => {
         let content = [];
 
-        for (let i = 0; i < 24; i++) {
-            const name = `${MOCK_FILM.name} ${i}`;
-            const date = MOCK_FILM.date + i;
-            const genre = `${MOCK_FILM.genre} ${i}`;
-            const timeline = MOCK_FILM.timeline + i;
-            const film = {name, date, genre, timeline, description: MOCK_FILM.description};
-           
+        MOCK_FILM.map(elem => { 
+            const date = elem.date;
+            const name = elem.name;
+            const genre = elem.genre;
+            const timeline = elem.timeline;
+            const description = elem.description;
+            const picture = elem.picture;
+            const film = {date, name, genre , timeline, description, picture};
 
             content.push(
-                <FilmListItem title={name} 
-                              date={date}
-                              genre={genre}
-                              ulia={() => this.handleClick(film)}/>
-            );
-        }
+                <FilmListItem 
+                activeFilmDescription= {()=>this.handleClick(film)}
+                title={name} 
+                date={date} 
+                picture={picture}
+                genre={genre}/>                
+            )
+        })
         return content;
     }
 
     render() {
-        return (
-            <div className={"film-list"}>
-                {this.renderFilms()}
-            </div>
-        );
+        return(
+             
+        <div  className="film-list">           
+            {this.isRenderFilms()}
+        </div>     
+        )
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
