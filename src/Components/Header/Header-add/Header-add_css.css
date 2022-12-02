@@ -1,0 +1,15 @@
+.add-button{
+    background-color: #424242;
+    padding: 5px 40px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #f65261;
+    cursor: pointer;
+}
+
+.add-button:hover{
+    background-color: #424242;
+    color: #e90a54;
+    cursor: pointer;
+}
+
