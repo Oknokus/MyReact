@@ -20,7 +20,9 @@ export default class filmList extends Component {
             const timeline = elem.timeline;
             const description = elem.description;
             const picture = elem.picture;
-            const film = {date, name, genre , timeline, description, picture};
+            const id = elem.id;
+            const film = {date, name, genre , timeline, description, picture, id};
+            
 
             content.push(
                 <FilmListItem 
@@ -28,7 +30,8 @@ export default class filmList extends Component {
                 title={name} 
                 date={date} 
                 picture={picture}
-                genre={genre}/>                
+                genre={genre}
+                id={id}/>                                
             )
         })
         return content;

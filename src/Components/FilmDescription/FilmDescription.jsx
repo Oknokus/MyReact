@@ -9,8 +9,8 @@ export default class FilmDescription extends Component {
         return (
             <div className={"description__block"}>
                 <div className={"description__block_picture"}>
-                <img className='description__block_picture' src={picture}
-                ></img>
+                <img className={"description__block_picture"} src={picture} alt={""}/>
+                
                 
                 </div>
                 <div className={"description__block_info"}>

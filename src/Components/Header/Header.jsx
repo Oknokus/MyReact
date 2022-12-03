@@ -5,52 +5,46 @@ import "./Header_css.css"
 
 export default class Header extends Component { 
     state = {
-        show: false
+        show: false,
       };
   
       showModal = () => {
         this.setState({
-          show: true
+          show: true,
         })
       };
   
       closeModal = () => {
         this.setState({
-          show: false
+          show: false,
         });
       }  
     render() {   
-        const {isFilmSelected, isFilmClose} = this.props;         
-            if (!this.state) {
-                return(               
-                    (<div         
-                        className={"header"}>
-                        <span className={"header-title"}>NetflixrouLette</span>  
-                        {isFilmSelected &&
-                        <div
-                        onClick={isFilmClose}
-                        className={"add-button"}>  
-                        CLOSE            
-                        </div>                                               
-                        }                    
-                </div>)     
-                ) 
-                
-                } else  {
-                return (
-                    <div         
-                        className={"header"}>
-                        <span className={"header-title"}>NetflixrouLette</span>  
-                        <div
-                            className={"add-button"}             
-                            onClick={() => {
-                            this.showModal();              
-                            }}
-                              >+ ADD MOVIE            
-                                </div>
-                            <FormDescription onClose={this.closeModal} show={this.state.show}/>                                                          
-                        </div>)                
-        }                
+
+        const {isFilmSelected, isFilmClose} = this.props; 
+                     
+           return ( 
+            <div         
+              className={"header"}>
+              <span className={"header-title"}>NetflixrouLette</span>              
+              {isFilmSelected &&             
+              <div
+              onClick={isFilmClose}
+              className={"add-button"}>  
+              CLOSE            
+              </div>
+            }     
+            <div
+            className={"add-button"}             
+            onClick={() => {
+            this.showModal();              
+            }}
+            >+ ADD MOVIE            
+            </div>
+            
+            <FormDescription onClose={this.closeModal} show={this.state.show}/>                          
+      </div>       
+      )                   
     }
 }
 

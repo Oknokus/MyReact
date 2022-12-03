@@ -22,9 +22,9 @@ export default class Page extends Component {
         this.setState({activeFilm: null})
     }
 
-   
+    
     render(){
-        const {activeFilm} = this.state
+        const {activeFilm} = this.state      
          
         return(
             <div className={"page"}>                
@@ -33,7 +33,7 @@ export default class Page extends Component {
                 <Search/> 
                 }                          
                 <Description/>
-                <FilmList getActiveFilm={this.setActiveFilm}/>
+                <FilmList getActiveFilm={this.setActiveFilm}/>               
                 <Footer/>
             </div>
         )

@@ -16,13 +16,13 @@ export default class FormDescription extends Component {
   };
   
   render() {
-    const {onClose, show} = this.props
+    const {show} = this.props
     if (!show) {
       return null;
     }    
     return createPortal  (       
       <div className="modal_window">  
-          <span class="close" onClick={this.onClose}>
+          <span className="close" onClick={this.onClose}>
             X
           </span>
           <h1 className="h1Form">ADD MOVIE</h1>

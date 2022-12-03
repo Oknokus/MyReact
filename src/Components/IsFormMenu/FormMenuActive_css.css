@@ -1,0 +1,30 @@
+.form-menu_button {
+    width: 120px;
+    background-color: #424242;
+    border-radius: 5px;  
+    cursor: pointer;   
+    text-align: left;
+    transform: translateX(-85px);
+    margin-top: 5px;
+}
+
+.form-active_button {
+    background-color: #424242;
+    color: white;
+    font-size: 15px;
+    padding: 5px;
+    cursor: pointer;  
+}
+
+.form-active_button:hover {
+    background-color: #f65261; 
+    cursor: pointer;     
+}
+
+.form-close_button {
+    font-size: 15px;
+    color: white;  
+    cursor: pointer; 
+    float: right;
+    margin: 5px 5px;
+  }

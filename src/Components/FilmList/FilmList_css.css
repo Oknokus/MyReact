@@ -24,6 +24,27 @@
     height: 95%;    
 }
 
+.film-list__item_button {
+    width: 35px;
+    height: 35px;  
+    border-radius: 50%;
+    background-color: #232323;
+    float: right;
+    transform: translateY(-290px);
+    margin-right: 20px;  
+    text-align: center;  
+}
+
+.film-list__item_span {
+    width: 5px;
+    height: 5px;  
+    display: block;
+    background-color: white;
+    border-radius: 50%;
+    margin-left: 15px; 
+    margin-top: 5px;     
+}
+
 .film-list__item_info {
     margin: 10px;
 }
@@ -38,3 +59,4 @@
     font-size: 11px;
     display: block;
 }
+
