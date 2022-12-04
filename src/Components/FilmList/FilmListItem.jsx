@@ -3,23 +3,24 @@ import FormMenuActive from "../IsFormMenu/FormMenuActive"
 
 export default class FilmListItem extends Component {
     state = {
-        activeFormMenu: false,
+        activeFormMenu: false,       
     };
 
-    setActiveFormMenu = () =>{
+    setActiveFormMenu = () => {
         this.setState({
             activeFormMenu: true,
         })
     };
 
-    resetActiveFormmMenu = () => {
-        this.setState({
-            activeFormMenu: false,
-        });
+    resetActiveFormMenu = () => {
+        this.setState({         
+           activeFormMenu: false,
+        })
       }  
 
-    render() {     
-      
+    render() {             
+        const {activeFormMenu} = this.state;
+        console.log(activeFormMenu) 
         const {title, date, genre, activeFilmDescription, picture, id} = this.props;
         return (
             <div>
@@ -42,15 +43,15 @@ export default class FilmListItem extends Component {
    
             </div>
 
-            <div
+            <div            
              className={'film-list__item_button'}             
-             onClick={() => this.setActiveFormMenu()}> 
+             onClick={this.setActiveFormMenu}> 
              <div >                 
              <span className={'film-list__item_span'}></span>
              <span className={'film-list__item_span'}></span>
              <span className={'film-list__item_span'}></span>
              </div>                            
-            <FormMenuActive fucnOnCloseForm={this.resetActiveFormmMenu} funcActiveFormMenu={this.state.activeFormMenu}/>
+            <FormMenuActive fucnOnCloseForm={this.resetActiveFormMenu} funcActiveFormMenu={activeFormMenu}/>
             </div>
          </div>
         );

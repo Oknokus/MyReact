@@ -27,21 +27,20 @@ export default class Header extends Component {
             <div         
               className={"header"}>
               <span className={"header-title"}>NetflixrouLette</span>              
-              {isFilmSelected &&             
+              {isFilmSelected ?            
               <div
               onClick={isFilmClose}
               className={"add-button"}>  
               CLOSE            
-              </div>
-            }     
-            <div
-            className={"add-button"}             
-            onClick={() => {
-            this.showModal();              
-            }}
-            >+ ADD MOVIE            
-            </div>
-            
+              </div> :
+              <div           
+              className={"add-button"}             
+              onClick={() => {
+              this.showModal();              
+              }}
+              >+ ADD MOVIE            
+              </div> 
+            }            
             <FormDescription onClose={this.closeModal} show={this.state.show}/>                          
       </div>       
       )                   

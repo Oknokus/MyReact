@@ -12,8 +12,7 @@ export default class filmList extends Component {
 
     isRenderFilms = (film) => {
         let content = [];
-
-        MOCK_FILM.map(elem => { 
+        MOCK_FILM.forEach(elem => { 
             const date = elem.date;
             const name = elem.name;
             const genre = elem.genre;
@@ -23,7 +22,6 @@ export default class filmList extends Component {
             const id = elem.id;
             const film = {date, name, genre , timeline, description, picture, id};
             
-
             content.push(
                 <FilmListItem 
                 activeFilmDescription= {()=>this.handleClick(film)}

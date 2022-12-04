@@ -8,13 +8,17 @@ export default class FormMenuActive extends Component {
     nameDel: "Delete",    
   }  
 
-  onCloseForm = () => {  
-    this.props.fucnOnCloseForm && this.props.fucnOnCloseForm();   
+  onCloseForm = (e) => {  
+    e.stopPropagation()
+    const {fucnOnCloseForm} = this.props;  
+   
+    if(fucnOnCloseForm) {
+      fucnOnCloseForm();
+    }
   }
 
   render() {
-    const {funcActiveFormMenu} = this.props;
-
+    const {funcActiveFormMenu} = this.props;  
     if (!funcActiveFormMenu) {
       return false;
     }    
@@ -22,7 +26,7 @@ export default class FormMenuActive extends Component {
       <div className={"form-menu_button"}> 
 
         <div className={"form-close_button" }
-        onClick={() => this.onCloseForm()}>
+        onClick={this.onCloseForm}>
         X </div>         
       
         <div className={"form-active_button"}>
@@ -33,7 +37,7 @@ export default class FormMenuActive extends Component {
         {this.state.nameDel}        
         </div> 
 
-        </div>            
+      </div>            
     )
   }
 }
