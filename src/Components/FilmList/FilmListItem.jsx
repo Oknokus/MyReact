@@ -20,7 +20,6 @@ export default class FilmListItem extends Component {
 
     render() {             
         const {activeFormMenu} = this.state;
-        console.log(activeFormMenu) 
         const {title, date, genre, activeFilmDescription, picture, id} = this.props;
         return (
             <div>

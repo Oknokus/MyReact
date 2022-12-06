@@ -12,8 +12,7 @@ export class IsFormMenu extends Component {
 
 isRenderFormMenu = (menu) => {
   let content = [];
-
-        
+          
         const name = "Edit";
         const nameDel = "Delete";       
         const menu = {name, nameDel };

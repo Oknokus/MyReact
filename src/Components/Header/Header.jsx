@@ -20,7 +20,7 @@ export default class Header extends Component {
         });
       }  
     render() {   
-
+        const {show} = this.state
         const {isFilmSelected, isFilmClose} = this.props; 
                      
            return ( 
@@ -41,7 +41,7 @@ export default class Header extends Component {
               >+ ADD MOVIE            
               </div> 
             }            
-            <FormDescription onClose={this.closeModal} show={this.state.show}/>                          
+            <FormDescription onClose={this.closeModal} show={show}/>                          
       </div>       
       )                   
     }
