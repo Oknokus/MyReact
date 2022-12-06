@@ -44,9 +44,9 @@ export default class FormMenuActive extends Component {
   }
 
   render() {
-    //  const {showFormEdit} = this.state.showFormEdit
-    //  const {showFormDelete} = this.state.showFormDelete
-    
+       const {showFormEdit} = this.state
+       const {showFormDelete} = this.state
+
     const {funcActiveFormMenu} = this.props;  
     if (!funcActiveFormMenu) {
       return false;
@@ -57,8 +57,8 @@ export default class FormMenuActive extends Component {
         
         <div className={"form-close_button" }
         onClick={this.onCloseForm}>
-        X 
-        </div> 
+        X  
+        </div>    
        
          <div 
          className={"form-active_button"}
@@ -66,6 +66,7 @@ export default class FormMenuActive extends Component {
          >
          EDIT        
          </div>
+         
     
         <div       
         className={"form-active_button"}
@@ -73,8 +74,8 @@ export default class FormMenuActive extends Component {
         DELETE        
         </div> 
                    
-      <FormDescriptionEdit onCloseFormEdit={this.closeModalEdit} showFormEdit={this.state.showFormEdit }/>
-      <FormDelete onCloseFormDelete={this.closeModalDelete} showFormDelete={this.state.showFormDelete}/>
+      <FormDescriptionEdit onCloseFormEdit={this.closeModalEdit} showFormEdit={showFormEdit }/>
+      <FormDelete onCloseFormDelete={this.closeModalDelete} showFormDelete={showFormDelete} />
       </div>
     )   
   }
