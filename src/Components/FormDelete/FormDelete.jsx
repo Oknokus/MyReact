@@ -1,69 +1,20 @@
 import React, { Component } from 'react'
-import { createPortal } from 'react-dom'
+import ModalForm from "../ModalForm/ModalForm"
 
 import "./FormDelete_css.css"
 
-
-
-export default class FormDelete extends Component {
- 
-  onclose =() => {
+export default class FormDelete extends Component { 
+  onClose = () => {
     const {onCloseFormDelete} = this.props;
-    if(onCloseFormDelete) {
-      onCloseFormDelete(this.onclose)    
-      
+    onCloseFormDelete && onCloseFormDelete()        
     }  
-  }
-  
+    
   render()  {
     const {showFormDelete} = this.props;
 
-    if(!showFormDelete) {
-      return null;
-    }
-    return createPortal (
-      <div className="modal_window">  
-              <span className="close" onClick={this.onclose}
-              >
-                X
-              </span>      
-              <h1 className="h1Form">DELETE MOVIE</h1>
-              <div className="formSame">
-              <form className="formWindow" action="/action_page.php"><br/>  
-                <input className={"inputFormDelete"} placeholder={"Are you sure you want to delete this movie?"} name="TITLE" type={'text'}/><br/> 
-                <div className={"buttons"}>            
-                  <input className={"resetButton"} type={"reset"}value="RESET"/>     
-                  <div
-                  className={"saveButton"}
-                  >CONFIRM</div>   
-                  </div>  
-                </form>
-              </div>
-              </div>, 
-              document.getElementById('root')
-
-    )
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    return <ModalForm title={'Delete Movie'}  showFormModal={showFormDelete} onClose={this.onClose} buttonText={"CONFIRM"} >
+      <input className={"inputFormDelete"} placeholder={"Are you sure you want to delete this movie?"} name="TITLE" type={'text'}/><br/> 
+       </ModalForm>       
+       }
+      }
+    

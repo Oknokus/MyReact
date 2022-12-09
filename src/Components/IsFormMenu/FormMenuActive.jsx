@@ -13,7 +13,8 @@ export default class FormMenuActive extends Component {
   showModalEdit = () => {
     this.setState({
       showFormEdit: true ,           
-    })     
+    })
+    this.onCloseForm()     
   };
 
   closeModalEdit = () => {
@@ -26,6 +27,7 @@ export default class FormMenuActive extends Component {
     this.setState({
       showFormDelete: true,      
     })
+    this.onCloseForm()
   };
 
   closeModalDelete = () => {
@@ -34,13 +36,10 @@ export default class FormMenuActive extends Component {
     });
   }  
   
-  onCloseForm = (e) => {  
-    e.stopPropagation()
-    const {fucnOnCloseForm} = this.props;  
-   
-    if(fucnOnCloseForm) {
-      fucnOnCloseForm();
-    }
+  onCloseForm = () => {    
+    const {fucnOnCloseForm} = this.props;    
+    fucnOnCloseForm && fucnOnCloseForm();  
+
   }
 
   render() {
@@ -48,11 +47,10 @@ export default class FormMenuActive extends Component {
        const {showFormDelete} = this.state
 
     const {funcActiveFormMenu} = this.props;  
-    if (!funcActiveFormMenu) {
-      return false;
-    } 
+    
 
-    return (                     
+    return (    
+      <> { funcActiveFormMenu &&               
       <div className={"form-menu_button"}> 
         
         <div className={"form-close_button" }
@@ -74,9 +72,12 @@ export default class FormMenuActive extends Component {
         DELETE        
         </div> 
                    
+      
+      </div>
+      }
       <FormDescriptionEdit onCloseFormEdit={this.closeModalEdit} showFormEdit={showFormEdit }/>
       <FormDelete onCloseFormDelete={this.closeModalDelete} showFormDelete={showFormDelete} />
-      </div>
+      </> 
     )   
   }
 }

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {createPortal} from "react-dom";
+import ModalForm from "../ModalForm/ModalForm"
 
 import "./FormDescriptionEdit_css.css"
 
@@ -12,24 +12,15 @@ export default class FormDescriptionEdit extends Component {
   }  
 
   onClose = () => {
-    this.props.onCloseFormEdit && this.props.onCloseFormEdit();
+    const {onCloseFormEdit} = this.props;
+    onCloseFormEdit && onCloseFormEdit();
   };
   
   render() {
     const {showFormEdit} = this.props
-    if (!showFormEdit) {         
-      return null;
-    }  
-      
-    return createPortal  (       
-      <div className="modal_window">  
-          <span className="close" onClick={this.onClose}>
-            X
-          </span>
-          <h1 className="h1Form">EDIT MOVIE</h1>
-          <div className="formSame">
-          <form className="formWindow" action="/action_page.php"><br/>             
-            <label for="ID">MOVIE ID</label><br/>           
+        
+    return <ModalForm   showFormModal={showFormEdit} onClose={this.onClose} buttonText={"SAVE"} title={'EDIT MOVIE'}>
+      <label for="ID">MOVIE ID</label><br/>           
             <input value={"ID-FILM-#"} className="inputIdForm" name="ID" type={'text'}/><br/> 
             <label for="TITLE">TITLE</label><br/>           
             <input className={"inputForm"} name="TITLE" type={'text'}/><br/> 
@@ -49,19 +40,7 @@ export default class FormDescriptionEdit extends Component {
             <input className={"inputForm"} name="OVERVIEW" type={'text'}/><br/> 
             <label for="RUNTIME">RUNTIME</label><br/>               
             <input className={"inputForm"} name="RUNTIME" type={'text'}/><br/> 
-            <div className={"buttons"}>            
-            <input className={"resetButton"} type={"reset"}value="RESET"/>     
-            <div
-            className={"saveButton"}
-            >SAVE</div>   
-            </div>        
-          </form>
-          </div>
-        </div>    
-      ,     
-      document.getElementById("root")      
-    )
-  }
+          </ModalForm>       
+            
 }
-
-
+}

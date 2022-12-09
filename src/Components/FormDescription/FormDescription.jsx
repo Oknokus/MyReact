@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {createPortal} from "react-dom";
+import ModalForm from "../ModalForm/ModalForm"
 
 import "./FormDescription_css.css"
 
@@ -17,17 +17,8 @@ export default class FormDescription extends Component {
   
   render() {
     const {show} = this.props
-    if (!show) {
-      return null;
-    }    
-    return createPortal  (       
-      <div className="modal_window">  
-          <span className="close" onClick={this.onClose}>
-            X
-          </span>
-          <h1 className="h1Form">ADD MOVIE</h1>
-          <div className="formSame">
-          <form className="formWindow" action="/action_page.php"><br/>          
+    
+    return <ModalForm showFormModal={show} title={"ADD MOVIE"} onClose={this.onClose} buttonText={"SUBMIT"}  >    
             <label for="TITLE">TITLE</label><br/>           
             <input className="inputForm" name="TITLE" type={'text'}/><br/> 
             <label for="RELEASE_DATE">RELEASE DATE</label><br/>              
@@ -45,17 +36,9 @@ export default class FormDescription extends Component {
             <label for="OVERVIEW">OVERVIEW</label><br/>             
             <input className="inputForm" name="OVERVIEW" type={'text'}/><br/> 
             <label for="RUNTIME">RUNTIME</label><br/>               
-            <input className="inputForm" name="RUNTIME" type={'text'}/><br/> 
-            <div className="buttons">
-            <input className="resetButton" type={"reset"}value="Reset"/>     
-            <input className="submitButton" type={"submit"} value="Submit"/>     
-            </div>        
-          </form>
-          </div>
-        </div>    
-      ,     
-      document.getElementById("root")      
-    )
+            <input className="inputForm" name="RUNTIME" type={'text'}/><br/>           
+            </ModalForm>      
+          
   }
 }
 

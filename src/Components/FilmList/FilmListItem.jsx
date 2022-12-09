@@ -44,8 +44,9 @@ export default class FilmListItem extends Component {
 
             <div            
              className={'film-list__item_button'}             
-             onClick={this.setActiveFormMenu}> 
-             <div >                 
+            > 
+             <div
+              onClick={this.setActiveFormMenu} >                 
              <span className={'film-list__item_span'}></span>
              <span className={'film-list__item_span'}></span>
              <span className={'film-list__item_span'}></span>
