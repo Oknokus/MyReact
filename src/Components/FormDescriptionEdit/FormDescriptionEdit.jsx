@@ -18,7 +18,7 @@ export default class FormDescriptionEdit extends Component {
   render() {
     const {showFormEdit} = this.props
         
-    return <ModalForm   showFormModal={showFormEdit} onClose={this.onClose} buttonText={"SAVE"} title={'EDIT MOVIE'}>
+    return <ModalForm showFormModal={showFormEdit} onClose={this.onClose} buttonText={"SAVE"} title={'EDIT MOVIE'}>
       <label for="ID">MOVIE ID</label><br/>           
             <input value={"ID-FILM-#"} className="inputIdForm" name="ID" type={'text'}/><br/> 
             <label for="TITLE">TITLE</label><br/>           

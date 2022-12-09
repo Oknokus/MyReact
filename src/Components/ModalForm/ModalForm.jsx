@@ -11,28 +11,30 @@ export default class ModalForm extends Component {
     if (!showFormModal) {         
       return null;
     }  
-      
-    return createPortal  (               
-      <div className="modal_window">  
-          <span className="close" onClick={onClose}>
+    
+    return createPortal  (  
+      <div className={"modalFormBackground"}>
+      <div className={"modal_window"}>  
+          <span className={"close"} onClick={onClose}>
             X
           </span>
-          <h1 className="h1Form">{title}</h1>
-          <div className="formSame">
-          <form className="formWindow" action="/action_page.php"><br/>  
+          <h1 className={"h1Form"}>{title}</h1>
+          <div className={"formSame"}>
+          <form className={"formWindow"} action="/action_page.php"><br/>  
           {children}   
             <div className={"buttons"}>            
             <input           
-            className={"resetButton"} type={"reset"}value="RESET"/>     
-            <input className="submitButton" type={"submit"} value={buttonText}/>   
+            className={"resetButton"} type={"reset"} value="RESET"/>     
+            <input className={"submitButton"} type={"submit"} value={buttonText}/>   
             </div>        
           </form>
           </div>
-        </div>    
+        </div>
+        </div>
       ,     
-      document.getElementById("root")      
-    )
-  }
+      document.getElementById("root")               
+    )  
+  }    
 }
 
 

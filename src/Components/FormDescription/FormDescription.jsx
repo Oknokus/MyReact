@@ -16,8 +16,10 @@ export default class FormDescription extends Component {
   
   render() {
     const {show} = this.props
+            
+    return (
     
-    return <ModalForm showFormModal={show} title={"ADD MOVIE"} onClose={this.onClose} buttonText={"SUBMIT"}  >    
+    <ModalForm showFormModal={show} title={"ADD MOVIE"} onClose={this.onClose} buttonText={"SUBMIT"}  >    
             <label for="TITLE">TITLE</label><br/>           
             <input className="inputForm" name="TITLE" type={'text'}/><br/> 
             <label for="RELEASE_DATE">RELEASE DATE</label><br/>              
@@ -36,7 +38,8 @@ export default class FormDescription extends Component {
             <input className="inputForm" name="OVERVIEW" type={'text'}/><br/> 
             <label for="RUNTIME">RUNTIME</label><br/>               
             <input className="inputForm" name="RUNTIME" type={'text'}/><br/>           
-            </ModalForm>      
+            </ModalForm>              
+            )
           
   }
 }
