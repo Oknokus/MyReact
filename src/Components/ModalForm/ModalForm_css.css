@@ -1,0 +1,111 @@
+.h1Form {  
+    padding: 10px 75px;
+    color: #ffff;  
+  }
+    .inputForm {
+      width: 400px;
+      padding: 10px 20px;
+      background-color: #424242;
+      border: none;
+      border-radius: 5px;  
+      color: #ffff;
+      font-size: 15px;
+      margin-top: 10px;
+      margin-bottom: 25px;
+    }
+    
+    .selectForm {
+      width: 440px;
+      padding: 10px 20px;
+      background-color: #424242;
+      border: none;
+      border-radius: 5px;  
+      color: #ffff;
+      font-size: 15px;
+      margin-top: 10px;
+      margin-bottom: 25px;
+    }
+    
+    .modal_window {
+        width: 600px;
+        height: max-content;
+        border: none;
+        background-color: #232323;
+        position: absolute;
+        z-index: 110;
+        text-align: left;
+        margin: 0 33% 0px 30%; 
+        top: 40px;   
+       
+      }
+    
+      .close {
+        font-size:32px;
+        color: #ffff;
+        float: right;
+        margin: 10px 15px;  
+        cursor: pointer; 
+      }
+    
+      .formWindow {  
+        text-align: left;     
+        padding-left: 75px;
+      }
+    
+      label {
+        color: #f65261;    
+      }
+    
+      .buttons {
+        float: right;
+        margin: 30px 85px 70px 0px;
+      }
+    
+      .resetButton {
+        padding: 15px 40px;
+        font-size: 15px;
+        font-weight: 700;
+        border: 1px solid #f65261;
+        background-color: transparent;
+        color: #f65261;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-right: 10px;
+      }
+  
+      .resetButton:hover {
+        color: #E91E63;
+        cursor: pointer;
+      }
+  
+      .submitButton {
+        background-color: #f65261;
+        color: #ffff;
+        padding: 15px 50px;
+        border-radius: 5px;   
+        cursor: pointer; 
+        padding: 15px 40px;
+        font-size: 15px;
+        font-weight: 700;
+      }
+  
+      .submitButton:hover {
+        background-color: #fa3949;
+        color: #ffff;     
+      }
+    
+
+      .inputFormDelete {
+    width: 400px;
+    padding: 10px 20px;
+    background-color: #424242;
+    border: none;
+    border-radius: 5px;  
+    color: #ffff;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+      
+    
+    

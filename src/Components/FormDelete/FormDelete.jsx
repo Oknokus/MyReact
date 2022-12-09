@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import ModalForm from "../ModalForm/ModalForm"
 
-import "./FormDelete_css.css"
 
 export default class FormDelete extends Component { 
   onClose = () => {

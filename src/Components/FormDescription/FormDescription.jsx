@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import ModalForm from "../ModalForm/ModalForm"
 
-import "./FormDescription_css.css"
 
 export default class FormDescription extends Component { 
   state = {
